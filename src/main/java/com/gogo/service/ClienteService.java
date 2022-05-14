@@ -12,7 +12,6 @@ public class ClienteService {
     ClienteRepository clienteRepository;
 
     public Cliente save(Cliente cliente) {
-        System.out.println("OK");
         return clienteRepository.save(cliente);
     }
 }
