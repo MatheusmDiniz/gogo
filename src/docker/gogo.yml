@@ -1,0 +1,11 @@
+version: '2'
+services:
+  gogo:
+    image: postgres:11.5
+    container_name: gogo
+    environment:
+      - POSTGRES_USER=gogo
+      - POSTGRES_PASSWORD=gogo
+      - POSTGRES_DB=gogo
+    ports:
+      - 5432:5432
