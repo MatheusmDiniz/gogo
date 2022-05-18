@@ -24,5 +24,4 @@ public class ClienteResource {
     public Cliente save(@RequestBody Cliente cliente) {
         return clienteService.save(cliente);
     }
-
 }

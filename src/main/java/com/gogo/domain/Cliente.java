@@ -26,4 +26,8 @@ public class Cliente {
 
     @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
+
+    @Column(name = "sexo")
+    private String sexo;
+    
 }
