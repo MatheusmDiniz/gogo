@@ -29,5 +29,8 @@ public class Cliente {
 
     @Column(name = "sexo")
     private String sexo;
+
+    @Column(name = "phone")
+    private String phone;
     
 }
