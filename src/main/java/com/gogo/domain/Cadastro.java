@@ -13,12 +13,12 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "cliente")
-@SequenceGenerator(name = "client_id_seq", sequenceName = "client_id_seq", allocationSize = 1)
-public class Cliente {
+@Table(name = "cadastro")
+@SequenceGenerator(name = "cadastro_id_seq", sequenceName = "cadastro_id_seq", allocationSize = 1)
+public class Cadastro {
 
     @Id
-    @GeneratedValue(strategy = IDENTITY, generator = "client_id_seq")
+    @GeneratedValue(strategy = IDENTITY, generator = "cadastro_id_seq")
     private Integer id;
 
     @Column(name = "nome")

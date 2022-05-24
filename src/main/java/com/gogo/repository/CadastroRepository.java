@@ -1,11 +1,11 @@
 package com.gogo.repository;
 
-import com.gogo.domain.Cliente;
+import com.gogo.domain.Cadastro;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ClienteRepository extends CrudRepository<Cliente, Integer> {
+public interface CadastroRepository extends CrudRepository<Cadastro, Integer> {
 }
 
 
