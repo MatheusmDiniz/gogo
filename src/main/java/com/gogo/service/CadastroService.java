@@ -12,7 +12,11 @@ public class CadastroService {
     @Autowired
     CadastroRepository clienteRepository;
 
-    public Cadastro save(Cadastro cadastro) {
+    public Cadastro save(Cadastro cadastro) throws Exception {
+        if(cadastro.getEndereco() == null){
+            throw new NullPointerException("O endereço está vazio");
+        }
+
         System.out.println("OK");
         return clienteRepository.save(cadastro);
     }

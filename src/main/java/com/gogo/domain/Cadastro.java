@@ -35,13 +35,12 @@ public class Cadastro {
     @Column(name = "telefone")
     private String telefone;
 
-    @OneToOne(mappedBy = "cadastro", cascade = ALL, fetch = LAZY, orphanRemoval = true)
-    private Endereco endereco;
-
     @Column(name = "rg")
     private String rg;
 
     @Column(name = "cpf")
     private String cpf;
-    
+
+    @OneToOne(mappedBy = "cadastro", cascade = ALL, fetch = LAZY, orphanRemoval = true)
+    private Endereco endereco;
 }

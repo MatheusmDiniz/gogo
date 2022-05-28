@@ -21,7 +21,7 @@ public class CadastroController {
 
     @ResponseStatus(OK)
     @RequestMapping(method = POST, consumes = APPLICATION_JSON_VALUE)
-    public Cadastro save(@RequestBody Cadastro cadastro) {
+    public Cadastro save(@RequestBody Cadastro cadastro) throws Exception {
         return cadastroService.save(cadastro);
     }
 }
