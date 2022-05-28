@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
@@ -30,7 +32,16 @@ public class Cadastro {
     @Column(name = "sexo")
     private String sexo;
 
-    @Column(name = "phone")
-    private String phone;
+    @Column(name = "telefone")
+    private String telefone;
+
+    @OneToOne(mappedBy = "cadastro", cascade = ALL, fetch = LAZY, orphanRemoval = true)
+    private Endereco endereco;
+
+    @Column(name = "rg")
+    private String rg;
+
+    @Column(name = "cpf")
+    private String cpf;
     
 }

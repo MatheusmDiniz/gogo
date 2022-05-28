@@ -1,4 +1,4 @@
-package com.gogo.resource;
+package com.gogo.controller;
 
 import com.gogo.domain.Cadastro;
 import com.gogo.service.CadastroService;
@@ -14,7 +14,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
 @RequestMapping("/api/cadastro")
-public class CadastroResource {
+public class CadastroController {
 
     @Autowired
     CadastroService cadastroService;
