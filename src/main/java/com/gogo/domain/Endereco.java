@@ -1,15 +1,14 @@
 package com.gogo.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "endereco")
@@ -20,9 +19,11 @@ public class Endereco {
     @GeneratedValue(strategy = IDENTITY, generator = "endereco_id_seq")
     private Integer id;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "cadastro_id")
-    private Cadastro cadastro;
+
+    @OneToOne(fetch = FetchType.LAZY,
+            mappedBy = "endereco")
+    private Cliente cliente;
+
 
     @Column(name = "rua")
     private String rua;

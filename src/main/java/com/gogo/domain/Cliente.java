@@ -1,26 +1,23 @@
 package com.gogo.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
-import static javax.persistence.CascadeType.ALL;
-import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "cadastro")
-@SequenceGenerator(name = "cadastro_id_seq", sequenceName = "cadastro_id_seq", allocationSize = 1)
-public class Cadastro {
+@Table(name = "cliente")
+@SequenceGenerator(name = "cliente_id_seq", sequenceName = "cliente_id_seq", allocationSize = 1)
+public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = IDENTITY, generator = "cadastro_id_seq")
+    @GeneratedValue(strategy = IDENTITY, generator = "cliente_id_seq")
     private Integer id;
 
     @Column(name = "nome")
@@ -41,6 +38,7 @@ public class Cadastro {
     @Column(name = "cpf")
     private String cpf;
 
-    @OneToOne(mappedBy = "cadastro", cascade = ALL, fetch = LAZY, orphanRemoval = true)
+    @OneToOne(fetch = FetchType.EAGER, optional = false, cascade=CascadeType.ALL)
+    @JoinColumn(name = "endereco_id", nullable = false)
     private Endereco endereco;
 }
